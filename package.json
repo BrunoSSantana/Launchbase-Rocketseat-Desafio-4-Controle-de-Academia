@@ -1,0 +1,26 @@
+{
+  "name": "launchbase-rocketseat-desafio-4-controle-de-academia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoSSantana/Launchbase-Rocketseat-Desafio-4-Controle-de-Academia.git"
+  },
+  "author": "BrunoSSantana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoSSantana/Launchbase-Rocketseat-Desafio-4-Controle-de-Academia/issues"
+  },
+  "homepage": "https://github.com/BrunoSSantana/Launchbase-Rocketseat-Desafio-4-Controle-de-Academia#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
