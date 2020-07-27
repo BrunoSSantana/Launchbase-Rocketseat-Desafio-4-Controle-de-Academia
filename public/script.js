@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.bootcamp')
+/* const cards = document.querySelectorAll('.bootcamp')
 
 const modalOverlay = document.querySelector('.modal-overlay')
 
@@ -15,7 +15,7 @@ for ( let card of cards) {
         console.log("OPA")
     })
 }
-
+ */
 /* document.querySelector('.close-modal').addEventListener('click', function () {
     modalOverlay.classList.remove('active')
     modal.classList.remove('maximize')
@@ -28,3 +28,15 @@ maximize.addEventListener('click', function () {
         modal.classList.add('maximize')
     }
 }) */
+
+//Active
+
+const headers = document.querySelectorAll('.links a')
+
+for (let header of headers) {
+    header.addEventListener("click", function() {
+        header.classList.add('active')
+        console.log(header)
+    })
+}
+console.log(headers)

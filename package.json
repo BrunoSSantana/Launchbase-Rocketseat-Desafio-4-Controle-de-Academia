@@ -4,9 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon server.js",
-    "browsersync": "brpwser-sync start --proxy http://localhost:5000 --files 'public, views'"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +21,6 @@
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.10",
-    "nodemon": "^2.0.4",
-    "npm": "^6.14.7",
-    "run-all": "^1.0.1"
+    "nodemon": "^2.0.4"
   }
 }

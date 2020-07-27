@@ -9,7 +9,6 @@
 * {
     font-family: 'Roboto', sans-serif;
     font-size: 16pt;
-    color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,6 +29,7 @@ header {
 }
 
 .links a {
+    color: var(--white);
     text-decoration: none;
     text-transform: capitalize;
     font-weight: 700;
@@ -56,4 +56,90 @@ header {
 .links a.active:hover::after {
     width: 100%;
     transition: width 200ms ease;
+}
+
+/* === CARD === */
+.card {
+    background-color: var(--white);
+    width: 60%;
+    min-height: 400px;
+
+    margin: 20px auto;
+
+    display: grid;
+    grid-template-columns: 40% 60% ;
+
+    box-shadow: 10px 10px #ffff00;
+
+    animation: up 1s ease-out;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.details {
+    margin: 20px;
+}
+.details h3  {
+    text-transform: uppercase;
+    color: var(--grey);
+    letter-spacing: 1pt;
+}
+
+.details .item {
+    border-bottom: 1px solid var(--grey);
+    padding: 2pt 0;
+}
+/* última div.item com ':last-child'*/
+.details .item:last-child {
+    border: none;
+}
+/*estilizar o label (ex.: Desde)*/
+.details .item:nth-child(8) div:nth-child(1) {
+    padding-top: 10px;
+    font-weight: 700;    
+    font-size: 12pt;
+    text-align: right;
+}
+/* valor (ex.: 02/02/2020) */
+.details .item:nth-child(8) div+div {
+    color: var(--grey);
+    background: none;
+    font-size: 12pt;
+    padding: 0;
+    border-bottom: 1pt solid;
+    text-align: right;
+}
+
+/* pegando o primeiro elemento contido na div.item */
+.details .item div:nth-child(1) {
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+/* pegando o segundo elemento contido na div.item */
+.details .item div:nth-child(2) {
+    font-size: 16pt;
+    color: var(--white);
+    background-color: var(--grey);
+    padding: 4px 8px;
+}
+
+.details .item span {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: var(--yellow);
+    border-radius: 16px;
+    color: var(--grey);
+    margin: 4px;
+    display: inline-block;
 }
