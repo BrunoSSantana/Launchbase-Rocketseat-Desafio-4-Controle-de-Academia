@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = express.Router()
-const instructors = require('./instructors')
+const instructors = require('./teachers')
 
 routes.get('/', function(req, res) {
     return res.redirect('/instructors')
