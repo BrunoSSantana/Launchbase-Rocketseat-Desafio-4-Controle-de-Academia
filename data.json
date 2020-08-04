@@ -1,3 +1,24 @@
 {
-  "instructors": []
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80",
+      "name": "Eduardo Santana",
+      "birth": 861148800000,
+      "grau_de_escolaridade": "ensino_superior_incompleto",
+      "tipo_de_aula": "P",
+      "area_de_atuacao": "MUSCULAÇÃO", 
+      "create_at": 1596483204782
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80",
+      "name": "Bruno Santana",
+      "birth": 861148800000,
+      "grau_de_escolaridade": "ensino_superior_completo",
+      "tipo_de_aula": "P",
+      "area_de_atuacao": "MUSCULAÇÃO", 
+      "create_at": 1596483204782
+    }
+  ]
 }

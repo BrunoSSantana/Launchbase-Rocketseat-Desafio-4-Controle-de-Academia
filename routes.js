@@ -1,6 +1,7 @@
 const express = require('express')
 const routes = express.Router()
-const instructors = require('./teachers')
+const instructors = require('./instructors')
+const teachers = require('./data.json')
 
 routes.get('/', function(req, res) {
     return res.redirect('/instructors')
@@ -12,6 +13,10 @@ routes.get('/instructors', function(req, res) {
 
 routes.get("/instructors/create", function(req, res) {
     return res.render('instructors/create.njk')
+})
+
+routes.get("/instructors/teachers", function(req, res){
+    return res.render('instructors/teachers', {teachers})
 })
 //pegando os dados do frontend
 

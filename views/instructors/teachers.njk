@@ -1,43 +1,43 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
-    <div class="card">
-        <div class="card">
-            <div class="head">
-                <img src="" alt="">
-                <h3></h3>
-                <h4></h4>
-                <span></span>
-            </div>
-            <div class="contentcard">
-                
-                <div class="description">
-                    <h5></h5>
-                    <p></p>
-                </div>
 
-                <div class="areas">
-                    <h5></h5>
-                    <div class="area">
-                        <span></span>
-                    </div>
-                </div>
-                
-                <div class="portfolio">
-                    <div>
-                        <span></span>
-                        <p></p>
-                    </div>
-                    <div>
-                        <span></span>
-                        <p></p>
-                    </div>
-                </div>
+    <div class="cart">
+        <div class="cart">
 
-            </div>
-            <button></button>
+            {% for teacher in teachers.instructors %}
+                <div class="head">
+                    <img src={{teacher.avatar_url}} alt="Foto do perfil de {{teacher.name}}">
+                    <h3>{{teacher.name}}</h3>
+                    <h4>{{teacher.id}}</h4>
+                    <span>avaliado</span>
+                </div>
+            
+                <div class="contentcard">
+                    
+                    <div class="areas">
+                        <h5>Área de Atuação</h5>
+                        <div class="area">
+                            <span>{{teacher.area_de_atuacao}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio">
+                        <div>
+                            <span></span>
+                            <p></p>
+                        </div>
+                        <div>
+                            <span></span>
+                            <p></p>
+                        </div>
+                    </div>
 
+                </div>
+                <button></button>
+            {% endfor %}
 
         </div>
     </div>
+    
 {% endblock content %}
