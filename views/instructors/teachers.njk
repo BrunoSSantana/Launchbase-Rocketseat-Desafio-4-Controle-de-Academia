@@ -2,15 +2,17 @@
 
 {% block content %}
 
-    <div class="cart">
-        <div class="cart">
+    <div class="teachers">
+        <div class="teacher">
 
             {% for teacher in teachers.instructors %}
-                <div class="head">
+                <div class="perfil">
                     <img src={{teacher.avatar_url}} alt="Foto do perfil de {{teacher.name}}">
-                    <h3>{{teacher.name}}</h3>
-                    <h4>{{teacher.id}}</h4>
-                    <span>avaliado</span>
+                    <div>
+                        <h4>{{teacher.id}}</h4>
+                        <h3>{{teacher.name}}</h3>
+                        <span>avaliado</span>
+                    </div>
                 </div>
             
                 <div class="contentcard">
@@ -34,7 +36,7 @@
                     </div>
 
                 </div>
-                <button></button>
+                <button>Ir</button>
             {% endfor %}
 
         </div>

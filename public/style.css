@@ -110,6 +110,10 @@ header {
     padding: 4pt 8pt;
     color: var(--white);
 }
+/* para a area de atuação no show.njk */
+.services {
+    display: table;
+}
 .details .item div span {
     display: inline-block;
 }
@@ -196,4 +200,21 @@ button {
 
 .details .item span {
     color: var(--gray);
+}
+
+/* === Teachers === */
+
+
+
+.teacher {
+    background-color: var(--white);
+    margin-top: 50px;
+    display: flex;
+    width: 100vw;
+}
+
+.teacher img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }

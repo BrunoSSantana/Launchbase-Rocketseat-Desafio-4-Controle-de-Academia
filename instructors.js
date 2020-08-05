@@ -1,5 +1,6 @@
 const fs = require('fs')
-const data = require('./teachers.json')
+const teachers = require('./teachers.json')
+const { age } = require('./utils')
 
 //create
 
@@ -17,9 +18,10 @@ exports.post = function(req, res) {
 
     birth = Date.parse(birth)
     const create_at = Date.now()
-    const id = Number(data.instructors.length + 1)
-
-    data.instructors.push({
+    const id = Number(teachers.instructors.length + 1)
+   
+    
+    teachers.instructors.push({
         id,
         avatar_url,
         name,
@@ -27,15 +29,41 @@ exports.post = function(req, res) {
         grau_de_escolaridade,
         tipo_de_aula,
         area_de_atuacao,
-        create_at
+        create_at,
     })
 
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/instructors/")
+        return res.redirect("/instructors/teachers")
     })
 
+}
+
+//show
+
+
+exports.show = (req, res) => {
+    const {id} = req.params
+    
+    const foundInstructor = teachers.instructors.find(function(instructor){
+        return instructor.id == id
+    })
+    
+    if (!foundInstructor) {
+        return res.send('Instrutor não encontrado')
+    }
+    
+
+
+    const teacher = {
+        ...foundInstructor,
+        age: age(foundInstructor.birth),
+        area_de_atuacao: foundInstructor.area_de_atuacao.split(','),
+        create_at: ""
+    }
+
+    return res.render('instructors/show', {teacher})
 }
 
 //update
