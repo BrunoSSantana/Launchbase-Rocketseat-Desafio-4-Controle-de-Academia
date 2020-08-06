@@ -114,6 +114,7 @@ header {
 /* para a area de atuação no show.njk */
 .services {
     display: table;
+    width: 100%;
 }
 .details .item div span {
     display: inline-block;

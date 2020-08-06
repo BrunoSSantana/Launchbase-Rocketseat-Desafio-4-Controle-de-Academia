@@ -1,6 +1,6 @@
 const fs = require('fs')
 const teachers = require('./teachers.json')
-const { age, graduation } = require('./utils')
+const { age, graduation, dateTeacher } = require('./utils')
 
 //create
 
@@ -61,7 +61,7 @@ exports.show = (req, res) => {
         grau_de_escolaridade: graduation(foundInstructor.grau_de_escolaridade),
         age: age(foundInstructor.birth),
         area_de_atuacao: foundInstructor.area_de_atuacao.split(','),
-        create_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.create_at)
+        create_at: dateTeacher(foundInstructor.create_at)
     }
 
     return res.render('instructors/show', {teacher})

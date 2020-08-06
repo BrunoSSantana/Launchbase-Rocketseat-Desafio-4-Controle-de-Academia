@@ -115,3 +115,18 @@ E finalizando a a função com um `return age` e importando e usando ela no `age
 
 Para "converter" o formato da data do `create_at` que está em milisegundos, para data no formato padrão "pt-BR". Para isso serão utilizados os seguintes métodos:
 `create_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.create_at)`
+Caso esse método não funcione por algum motivo, vamos criar uma função que faça isso pra nós.
+No arquivo `utils.js` onde se encntra as demais funções que estamos utilizando, vamos criar mais uma, chamada `dateTeacher` onde vamos introduzir um objeto `new Date()` na qual passarrá nossa data do `create_at`:
+`dateTeacher: function(timestamp) { data = new Date(timestamp) }`
+Em seguida vamos capturar ano, mês e dia com métodos do `Date()` e retornar a data no formato que queremos:
+```
+dateTeacher: function(timestamp) {
+        data = new Date(timestamp)
+
+        const dia = data.getDate().toString().padStart(2, "0")
+        const mes = (data.getMonth()+1).toString().padStart(2, "0")
+        const ano = data.getFullYear()
+        
+        return `${dia}/${mes}/${ano}`
+    }
+```
