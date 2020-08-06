@@ -3,13 +3,12 @@
 {% block content %}
 
     <div class="teachers">
-        <div class="teacher">
 
-            {% for teacher in teachers.instructors %}
+        {% for teacher in teachers.instructors %}
+            <div class="teacher">
                 <div class="perfil">
                     <img src={{teacher.avatar_url}} alt="Foto do perfil de {{teacher.name}}">
                     <div>
-                        <h4>{{teacher.id}}</h4>
                         <h3>{{teacher.name}}</h3>
                         <span>avaliado</span>
                     </div>
@@ -36,10 +35,11 @@
                     </div>
 
                 </div>
+                
                 <button>Ir</button>
-            {% endfor %}
+            </div>
 
-        </div>
+        {% endfor %}
     </div>
     
 {% endblock content %}
