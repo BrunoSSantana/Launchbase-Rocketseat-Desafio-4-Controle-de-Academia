@@ -110,3 +110,8 @@ if (month < 0 || month == 0 && (today.getDate - birthDate.getDate) <= 0 ) {
         }
 ```
 E finalizando a a função com um `return age` e importando e usando ela no `age: age(foundInstructor.birth),`.
+
+### create_at
+
+Para "converter" o formato da data do `create_at` que está em milisegundos, para data no formato padrão "pt-BR". Para isso serão utilizados os seguintes métodos:
+`create_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.create_at)`

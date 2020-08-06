@@ -61,6 +61,7 @@ header {
 
 /* === CARD === */
 .card {
+    position: relative;
     background-color: var(--white);
     max-width: 60%;
     min-height: 400px;
@@ -186,16 +187,21 @@ input::placeholder {
     color: var(--white);
 }
 
-button {
+button[type="submit"],
+a.button {
     margin-top: 8px;
     padding: 4px 8px;
     border-top: 4px solid var(--yellow);
-    border-right: none;
-    border-left: none;
-    border-bottom: none;
     background-color: var(--gray);
     color: var(--white);
     cursor: pointer;
+    
+    
+}
+a.button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .details .item span {

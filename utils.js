@@ -11,5 +11,17 @@ module.exports = {
         }
 
         return age
+    },
+    graduation: function(graduation) {
+        switch(graduation) {
+            case 'esi':
+                return 'Ensino Superior Incompleto'
+            case 'esc':
+                return 'Ensino Superior Completo'
+            case 'm':
+                return 'Mestrado'
+            case 'd':
+                return 'Doutorado'
+        }
     }
 }

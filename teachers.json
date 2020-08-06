@@ -15,7 +15,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1504802469493-cad9b622c4f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "name": "Luna",
       "birth": 811036800000,
-      "grau_de_escolaridade": "Mestrado",
+      "grau_de_escolaridade": "m",
       "tipo_de_aula": "P",
       "area_de_atuacao": "Dança",
       "create_at": 1596570577210
@@ -25,7 +25,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1501871732394-eccc65227089?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "name": "Lua",
       "birth": 829267200000,
-      "grau_de_escolaridade": "ensino_superior_completo",
+      "grau_de_escolaridade": "esc",
       "tipo_de_aula": "P",
       "area_de_atuacao": "Dança, Crosfit",
       "create_at": 1596570619091
@@ -35,7 +35,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "name": "Bruno Santana",
       "birth": 861148800000,
-      "grau_de_escolaridade": "ensino_superior_completo",
+      "grau_de_escolaridade": "esc",
       "tipo_de_aula": "D",
       "area_de_atuacao": "Crosfit",
       "create_at": 1596570666631
@@ -45,7 +45,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       "name": "Wagner de Assis",
       "birth": 548640000000,
-      "grau_de_escolaridade": "Doutorado",
+      "grau_de_escolaridade": "d",
       "tipo_de_aula": "D",
       "area_de_atuacao": "MUSCULAÇÃO, CROSFIT",
       "create_at": 1596635750177
@@ -55,7 +55,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1578489758854-f134a358f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       "name": "Jéssyca",
       "birth": 898214400000,
-      "grau_de_escolaridade": "mestrado",
+      "grau_de_escolaridade": "m",
       "tipo_de_aula": "P",
       "area_de_atuacao": "Dança",
       "create_at": 1596644210322
