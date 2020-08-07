@@ -32,5 +32,18 @@ module.exports = {
         const ano = data.getFullYear()
         
         return `${dia}/${mes}/${ano}`
+    },
+    dateUtc: function(timestamp) {
+        data = new Date(timestamp)
+
+        const dia = data.getUTCDate().toString().padStart(2, "0")
+        const mes = (data.getUTCMonth()+1).toString().padStart(2, "0")
+        const ano = data.getUTCFullYear()
+
+        return `${ano}-${mes}-${dia}`
+    },
+    redirect: function() {
+        
+        return
     }
 }

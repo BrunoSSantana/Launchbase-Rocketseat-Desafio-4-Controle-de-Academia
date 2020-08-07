@@ -2,10 +2,10 @@
   "instructors": [
     {
       "id": 1,
-      "avatar_url": "https://images.unsplash.com/photo-1504802469493-cad9b622c4f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-      "name": "Luna",
+      "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Ana",
       "birth": 768268800000,
-      "grau_de_escolaridade": "mestrado",
+      "grau_de_escolaridade": "m",
       "tipo_de_aula": "D",
       "area_de_atuacao": "Dança, Crosfit",
       "create_at": 1596569911901
@@ -47,7 +47,7 @@
       "birth": 548640000000,
       "grau_de_escolaridade": "d",
       "tipo_de_aula": "D",
-      "area_de_atuacao": "MUSCULAÇÃO, CROSFIT",
+      "area_de_atuacao": "Musculação, Crosfit",
       "create_at": 1596635750177
     },
     {
@@ -59,6 +59,16 @@
       "tipo_de_aula": "P",
       "area_de_atuacao": "Dança",
       "create_at": 1596644210322
+    },
+    {
+      "id": 7,
+      "avatar_url": "https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=311&q=80",
+      "name": "Lucas",
+      "birth": 864259200000,
+      "grau_de_escolaridade": "esc",
+      "tipo_de_aula": "P",
+      "area_de_atuacao": "Musculação, Crosfit",
+      "create_at": 1596748119308
     }
   ]
 }

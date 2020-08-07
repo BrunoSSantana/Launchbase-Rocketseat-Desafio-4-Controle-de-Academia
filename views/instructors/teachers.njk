@@ -5,12 +5,12 @@
     <div class="teachers">
 
         {% for teacher in teachers.instructors %}
-            <div class="teacher">
+            <div class="teacher" id="{{teacher.id}}">
                 <div class="perfil">
                     <img src={{teacher.avatar_url}} alt="Foto do perfil de {{teacher.name}}">
                     <div>
                         <h3>{{teacher.name}}</h3>
-                        <span>avaliado</span>
+                        <span> {{"Presencial" if teacher.tipo_de_aula == "P" else "Distância" }}</span>
                     </div>
                 </div>
             

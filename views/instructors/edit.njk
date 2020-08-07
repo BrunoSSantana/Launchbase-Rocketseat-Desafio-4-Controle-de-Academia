@@ -2,76 +2,14 @@
 
 {% block content %}
     <form class="card" method="POST" action="/instructors">
-        <section class="avatar" style="background: url(https://source.unsplash.com/collection/2276687/500x500) no-repeat center center / cover" >
+        <section class="avatar" style="background: url({{teacher.avatar_url}}) no-repeat center center / cover" >
         </section>
         
         <section class="details">
-            <h3>Novo Instrutor</h3>
+            <h3>Editar Instrutor</h3>
 
-            <div class="item">
-                <div>Avatar URL</div>
-                <div>
-                    <input 
-                    type="url" 
-                    name="avatar_url" 
-                    placeholder="http://"
-                    >
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Nome Completo</div>
-                <div>
-                    <input 
-                    type="text" 
-                    name="name"
-                    placeholder="Seu Nome"        
-                    >
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Data de Nascimento</div>
-                <div>
-                    <input 
-                    type="date"
-                    name="birth"
-                    >
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Grau de Escolaridade</div>
-                <div>
-                    <select name="grau_de_escolaridade" >
-                        <option value="esi">Ensino Superior Incompleto</option>
-                        <option value="esc">Ensino Superior Completo</option>
-                        <option value="m">Mestrado</option>
-                        <option value="d">Doutorado</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Tipo de aula</div>
-                <div>
-                    <span><input type="radio" name="tipo_de_aula" value="P">Presencial</span>
-                    <span><input type="radio" name="tipo_de_aula" value="D">Distância</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Área de Atuação</div>
-                <div>
-                    <input type="text"
-                    name="area_de_atuacao"
-                    placeholder="Ex.: Musculação, Crosfit"
-                    >
-
-                </div>
-            </div>
-
-            <button type="submit">Salvar</button>
+            {% include 'instructors/fields.njk' %}
+            
 
         </section>
     </form>

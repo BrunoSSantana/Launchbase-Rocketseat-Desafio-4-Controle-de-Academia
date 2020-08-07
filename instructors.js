@@ -1,6 +1,6 @@
 const fs = require('fs')
 const teachers = require('./teachers.json')
-const { age, graduation, dateTeacher } = require('./utils')
+const { age, graduation, dateUtc, dateTeacher } = require('./utils')
 
 //create
 
@@ -53,7 +53,6 @@ exports.show = (req, res) => {
     if (!foundInstructor) {
         return res.send('Instrutor não encontrado')
     }
-    
 
 
     const teacher = {
@@ -67,8 +66,57 @@ exports.show = (req, res) => {
     return res.render('instructors/show', {teacher})
 }
 
+//edit
+
+exports.edit = (req, res) => {
+    const {id} = req.params
+
+    const foundInstructor = teachers.instructors.find(function(instructor){
+        return instructor.id == id
+    })
+    
+    if (!foundInstructor) {
+        return res.send('Instrutor não encontrado')
+    }
+
+    const teacher = {
+        ...foundInstructor,
+        birth: dateUtc(foundInstructor.birth)
+    }
+
+     return res.render('instructors/edit', {teacher})
+}
+
 //update
 
+exports.update = (req, res) => {
+    const {id} = req.body
+    let index = 0
 
+    const foundInstructor = teachers.instructors.find(function(instructor, foundIndex){
+        if (id == instructor.id) {
+            index = foundIndex
+            return true
+        }
+    })
+    
+    if (!foundInstructor) {
+        return res.send('Instrutor não encontrado')
+    }
+
+    const instructor = {
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth) //passando para timestamp
+    }
+
+    teachers.instructors[index] = instructor
+
+    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err) {
+        if (err) return res.send('Write file err')
+
+    return res.redirect(`/instructors/${id}`)
+    })
+}
 
 //delte
