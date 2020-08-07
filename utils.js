@@ -41,9 +41,5 @@ module.exports = {
         const ano = data.getUTCFullYear()
 
         return `${ano}-${mes}-${dia}`
-    },
-    redirect: function() {
-        
-        return
     }
 }

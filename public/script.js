@@ -40,3 +40,15 @@ for (let header of headers) {
     })
 }
 console.log(headers)
+
+function redirect () {
+    const cards = document.querySelectorAll('.teacher')
+    
+    for ( card of cards) {
+        card.addEventListener("click", function (){
+            const teacher = card.getAttribute("id")
+            window.location.href = `/instructors/${teacher}`
+            console.log("opa")
+        })
+    }
+}
