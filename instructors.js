@@ -130,7 +130,7 @@ exports.delete = (req, res) => {
 
     teachers.instructors = filterinstructors
 
-    fs.writeFile("teacher.json", JSON.stringify(teachers, null, 2), function(err){
+    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err){
         if(err) return res.send("Erro na execução do processo")
 
         return res.redirect("/instructors/teachers")
