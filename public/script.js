@@ -31,24 +31,23 @@ maximize.addEventListener('click', function () {
 
 //Active
 
-const headers = document.querySelectorAll('.links a')
+const headers = document.querySelectorAll('.headers')
 
 for (let header of headers) {
     header.addEventListener("click", function() {
         header.classList.add('active')
-        console.log(header)
+        console.log('opa')
     })
 }
 console.log(headers)
 
-function redirect () {
-    const cards = document.querySelectorAll('.teacher')
+//= REDIRECT=\\
+const cards = document.querySelectorAll('.teacher')
     
-    for ( card of cards) {
-        card.addEventListener("click", function (){
-            const teacher = card.getAttribute("id")
-            window.location.href = `/instructors/${teacher}`
-            console.log("opa")
-        })
-    }
+for (let card of cards) {
+    card.addEventListener("click", function (){
+        const teacher = card.getAttribute("id")
+        window.location.href = `/instructors/${teacher}`
+        console.log("opa")
+    })
 }
