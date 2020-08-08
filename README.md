@@ -1,2 +1,5 @@
-# Launchbase-Rocketseat-Desafio-4-Controle-de-Academia
-Projeto realizado durante o LaunchBase como a finalidade para uma posterior consulta e demonstração dos conhecimentos adquiridos.
+<p> https://img.shields.io/badge/license-MIT-brightgreen </p>
+<h1 align="center">
+    <img src="https://ik.imagekit.io/brunosantana/GymManager_x9iYcjmCNZC.png" height="150" />
+</h1>
+
