@@ -120,3 +120,19 @@ exports.update = (req, res) => {
 }
 
 //delte
+
+exports.delete = (req, res) => {
+    const {id} = req.body
+
+    const filterinstructors = teachers.instructors.filter(function(instructor){
+        return instructor.id != id
+    })
+
+    teachers.instructors = filterinstructors
+
+    fs.writeFile("teacher.json", JSON.stringify(teachers, null, 2), function(err){
+        if(err) return res.send("Erro na execução do processo")
+
+        return res.redirect("/instructors/teachers")
+    })
+}

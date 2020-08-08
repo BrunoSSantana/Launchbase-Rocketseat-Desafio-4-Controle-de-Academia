@@ -25,6 +25,7 @@ routes.get("/instructors/:id/edit", instructors.edit)
 
 routes.put("/instructors", instructors.update)
 
+routes.delete("/instructors", instructors.delete)
 //pegando os dados do frontend
 
 routes.post("/instructors", instructors.post )

@@ -198,10 +198,16 @@ a.button {
     border-bottom: none;
     background-color: var(--gray);
     color: var(--white);
-    cursor: pointer;
-    
-    
+        cursor: pointer;
+    width: 100%;
 }
+
+.form-delete button {
+    background-color: var(--yellow);
+    color: var(--gray);
+    border: none;
+}
+
 a.button {
     display: block;
     text-align: center;
@@ -243,7 +249,8 @@ a.button {
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--white);
     padding: 16px 24px;
-    box-shadow: 10px 10px var(--yellow);;
+    box-shadow: 10px 10px var(--yellow);
+    cursor: pointer;
 }
 .teacher .perfil {
     display: grid;
