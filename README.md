@@ -59,3 +59,8 @@ O projeto foi desenvolvido utilizando as seguinte tecnologias:
 - [Gitmoji](https://gitmoji.carloscuesta.me/)
 - [Font Awesome](https://fontawesome.com)
 - [Img Shields](https://shields.io)
+- [BEST README TEMPLATE](https://github.com/othneildrew/Best-README-Template)
+
+---
+
+:triangular_flag_on_post: By [Bruno Santana](https://github.com/BrunoSSantana)
