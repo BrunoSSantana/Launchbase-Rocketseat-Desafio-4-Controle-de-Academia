@@ -42,7 +42,6 @@ exports.post = function(req, res) {
 
 //show
 
-
 exports.show = (req, res) => {
     const {id} = req.params
     
