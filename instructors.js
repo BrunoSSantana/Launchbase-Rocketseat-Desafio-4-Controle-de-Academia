@@ -1,6 +1,6 @@
 const fs = require('fs')
 const teachers = require('./teachers.json')
-const { age, graduation, dateUtc, dateTeacher } = require('./utils')
+const { age, dateUtc, graduation, dateTeacher } = require('./utils')
 
 //create
 

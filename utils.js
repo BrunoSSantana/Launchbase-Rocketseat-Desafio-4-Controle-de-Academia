@@ -24,6 +24,7 @@ module.exports = {
                 return 'Doutorado'
         }
     },
+    
     dateTeacher: function(timestamp) {
         data = new Date(timestamp)
 

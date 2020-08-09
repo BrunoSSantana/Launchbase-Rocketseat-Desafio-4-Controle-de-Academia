@@ -1,7 +1,7 @@
 {
   "instructors": [
     {
-      "id": "1",
+      "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
       "name": "Ana Beatriz",
       "birth": 799804800000,
@@ -51,7 +51,7 @@
       "create_at": 1596644210322
     },
     {
-      "id": "6",
+      "id": 6,
       "avatar_url": "https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=311&q=80",
       "name": "Lucas",
       "birth": 864259200000,
@@ -59,6 +59,35 @@
       "tipo_de_aula": "P",
       "area_de_atuacao": "Musculação, Crosfit",
       "create_at": 1596748119308
+    },
+    {
+      "id": 7,
+      "avatar_url": "https://images.unsplash.com/photo-1499763874088-6f30adc715b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=378&q=80",
+      "name": "Renan",
+      "birth": 746496000000,
+      "grau_de_escolaridade": "esc",
+      "tipo_de_aula": "D",
+      "area_de_atuacao": "Crosfit",
+      "create_at": 1596981840457
+    },
+    {
+      "id": 8,
+      "avatar_url": "https://images.unsplash.com/photo-1491484925566-336b202157a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+      "name": "Gustavo",
+      "birth": 601171200000,
+      "grau_de_escolaridade": "esi",
+      "area_de_atuacao": "Dança",
+      "create_at": 1596982151835
+    },
+    {
+      "id": 9,
+      "avatar_url": "https://images.unsplash.com/photo-1542190891-2093d38760f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Joaquim",
+      "birth": 6652800000,
+      "grau_de_escolaridade": "d",
+      "tipo_de_aula": "P",
+      "area_de_atuacao": "Zumba",
+      "create_at": 1596985212816
     }
   ]
 }
