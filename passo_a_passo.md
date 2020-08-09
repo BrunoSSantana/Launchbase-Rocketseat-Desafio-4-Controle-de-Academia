@@ -243,6 +243,103 @@ Para apresentar os dados para o instrutor faz necessário a criação de um arqu
 {% endfor %}
 ```
 
-## Edit
+## Editando dados do Instrutor
 
+Para realizarmos a edição dos dados vamos criar duas rotas uma para apresentar os dados para serem editados e outra para substituir os dados no arquivo *JSON*. Essas duas rotas terão **VERBS** diferentes, devido a terem propósitos diferntes, será utilizado o `GET` para a primeira etapa e na segunda o `PUT`.
+```Javascript
+routes.get("/instructors/:id/edit", instructors.edit)
 
+routes.put("/instructors", instructors.update)
+```
+
+### Edit
+#### backend
+
+Após criar a rota utilizando o `GET`, vamos criar a `function` para passar os dados do instrutor semelhante o que foi feito no  show, pegando o `{id}` no `req.params` fazendo a validação e ajustando o `.birth` para que o mesmo tenha um formato universal. Para isso vamos fazer um spread e criar uma função para fazer o ajuste. Bem semelhante com funções criadas anteriormente, iremos utilizar o seguinnte código:
+```Javascript
+dateUtc: function(timestamp) {
+    data = new Date(timestamp)
+
+    const dia = data.getUTCDate().toString().padStart(2, "0")
+    const mes = (data.getUTCMonth()+1).toString().padStart(2, "0")
+    const ano = data.getUTCFullYear()
+
+    return `${ano}-${mes}-${dia}`
+}
+```
+Após finalizar essa parte a função *edit* retornará o arquivo **edit.njk** e a variável com o objeto do instrutor.
+```Javascript
+exports.edit = (req, res) => {
+    const {id} = req.params
+
+    const foundInstructor = teachers.instructors.find(function(instructor){
+        return instructor.id == id
+    })
+    
+    if (!foundInstructor) {
+        return res.send('Instrutor não encontrado')
+    }
+
+    const teacher = {
+        ...foundInstructor,
+        birth: dateUtc(foundInstructor.birth)
+    }
+
+     return res.render('instructors/edit', {teacher})
+}
+```
+
+#### frontend
+Já que a parte do cadastro é semlhante ao da edição, vamos reaproveitar isso, onde será criando um arquivo novo (**fileds.njk**), e que será incluído no *create* e no *edit* utilizando o nunjucks com a funcionalidade do *include*: `{% include 'instructors/fields.njk' %}`.
+
+### Update
+Após criar a rota onde será visualizado o formulário para editar os dados, é necessário criar a rota para fazer a atualização desses novos dados, mas antes é necessário saber que o **HTML5** não fornece suporte para outros verbos execto o `POST` e o `GET`, para resolver esse problema, vamos instalar outra depeência para sobreescrever o método. O nome desta dependência é **Method Override**. Para instalar o method override:
+```bash
+$ npm install method-override
+```
+Agora vamos abrir nosso server e configurar o method override, começaremos importando:
+`const methodOverride = require('method-override')`
+e para que servidor entenda que será utilizado outro método será necessário uma configuração, além disso essa configurão precisa estar antes da middleware da rota, pois quando vier para a informação que aquilo é um `PUT`,deverá ser sobreescrito antes e ser passado para a rota, ficando dessa forma:
+```Javascript
+//Middlewares
+server.use(express.urlencoded( {extended: true} ))
+server.use(express.static('public'))
+server.use(methodOverride('_method')) //antes das rotas smp
+server.use(routes)
+```
+Além disso é necessário passar um passar o seguinte parâmetro no `action` do `<form>`: `action="/instructors?_method=PUT"` para informar que o método que será utilizado será o `PUT`. Também é necessário para que o backend identifique qual o formulário foi preenchido, um `input:hiden` com o `value={{teacher.id}}` o qual será passado no `req.body` para a validação do instrutor.
+Tendo a rota criada e o method override configurado corretamente, faz necessário agora criar a função para atualizar os dados editados. Essa função será chamada de `update`, contado com o seguinte código:
+```Javascript
+exports.update = (req, res) => {
+    const {id} = req.body
+    let index = 0
+
+    const foundInstructor = teachers.instructors.find(function(instructor, foundIndex){
+        if (id == instructor.id) {
+            index = foundIndex
+            return true
+        }
+    })
+    
+    if (!foundInstructor) {
+        return res.send('Instrutor não encontrado')
+    }
+
+    const instructor = {
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth) //passando para timestamp
+    }
+
+    teachers.instructors[index] = instructor
+
+    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err) {
+        if (err) return res.send('Write file err')
+
+    return res.redirect(`/instructors/${id}`)
+    })
+}
+```
+O `let index` será utilizado para saber qual instrutor será modificado modificando um pouco do design anteriomente visto da validação. Além disso, é feito um `spread` adicionando o `foundInstructor` `req.body`, onde serão subscrito devidamente e sendo necessário apenas o  tratando do `birth`, pois o dado ainda não está como `timestamp`. para finalizar é necessário como no `POST` a utilização do `fs` para escrever o dados capturados.
+
+## Delete
