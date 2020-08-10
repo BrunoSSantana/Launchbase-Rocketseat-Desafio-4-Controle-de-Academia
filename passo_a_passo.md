@@ -343,3 +343,29 @@ exports.update = (req, res) => {
 O `let index` será utilizado para saber qual instrutor será modificado modificando um pouco do design anteriomente visto da validação. Além disso, é feito um `spread` adicionando o `foundInstructor` `req.body`, onde serão subscrito devidamente e sendo necessário apenas o  tratando do `birth`, pois o dado ainda não está como `timestamp`. para finalizar é necessário como no `POST` a utilização do `fs` para escrever o dados capturados.
 
 ## Delete
+
+Para a realização do Delete o procedimento é semelhante, assim como na opção de editar será adicionado uma `input:hiden` da seguinte maneira:
+```HTML
+<form class="form-delete" action="/instructors?_method=DELETE" method="post">
+    <input type="hidden" name="id" value={{teacher.id}}>
+    <button type="submit">Deletar</button>
+</form> 
+```
+A rota a ser adicionada é semelhante as demais já adicionadas: `routes.delete("/instructors", instructors.delete)`. E o callback da segiunte maneira:
+```Javascript
+exports.delete = (req, res) => {
+    const {id} = req.body
+
+    const filterinstructors = teachers.instructors.filter(function(instructor){
+        return instructor.id != id
+    })
+    
+    teachers.instructors = filterinstructors
+
+    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err){
+        if(err) return res.send("Erro na execução do processo")
+
+        return res.redirect("/instructors/teachers")
+    })
+}
+```
