@@ -79,16 +79,6 @@
       "grau_de_escolaridade": "esi",
       "area_de_atuacao": "Dança",
       "create_at": 1596982151835
-    },
-    {
-      "id": 9,
-      "avatar_url": "https://images.unsplash.com/photo-1542190891-2093d38760f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Joaquim",
-      "birth": 6652800000,
-      "grau_de_escolaridade": "d",
-      "tipo_de_aula": "P",
-      "area_de_atuacao": "Zumba",
-      "create_at": 1596985212816
     }
   ]
 }

@@ -129,6 +129,6 @@ exports.delete = (req, res) => {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Erro na execução do processo")
 
-        return res.redirect("/instructors/index")
+        return res.redirect("/instructors/")
     })
 }
