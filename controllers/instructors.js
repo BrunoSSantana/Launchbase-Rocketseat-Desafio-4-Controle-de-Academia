@@ -1,11 +1,16 @@
 const fs = require('fs')
-const teachers = require('./teachers.json')
-const { age, dateUtc, graduation, dateTeacher } = require('./utils')
+const data = require('../data.json')
+const { age, dateUtc, graduation, dateTeacher } = require('../utils')
 
-//create
+exports.index = function(req, res) {
+    return res.render('instructors/index', {instructors: data.instructors})
+}
+
+exports.create = function(req, res) {
+    return res.render('instructors/create')
+}
 
 exports.post = function(req, res) {
-    //req.body
     const keys = Object.keys(req.body)
     
     for (key of keys) {
@@ -18,10 +23,9 @@ exports.post = function(req, res) {
 
     birth = Date.parse(birth)
     const create_at = Date.now()
-    const id = Number(teachers.instructors.length + 1)
+    const id = Number(data.instructors.length + 1)
    
-    
-    teachers.instructors.push({
+    data.instructors.push({
         id,
         avatar_url,
         name,
@@ -32,20 +36,18 @@ exports.post = function(req, res) {
         create_at,
     })
 
-    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err) {
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/instructors/teachers")
+        return res.redirect("/instructors/index")
     })
 
 }
 
-//show
-
 exports.show = (req, res) => {
     const {id} = req.params
     
-    const foundInstructor = teachers.instructors.find(function(instructor){
+    const foundInstructor = data.instructors.find(function(instructor){
         return instructor.id == id
     })
     
@@ -65,12 +67,10 @@ exports.show = (req, res) => {
     return res.render('instructors/show', {teacher})
 }
 
-//edit
-
 exports.edit = (req, res) => {
     const {id} = req.params
 
-    const foundInstructor = teachers.instructors.find(function(instructor){
+    const foundInstructor = data.instructors.find(function(instructor){
         return instructor.id == id
     })
     
@@ -86,13 +86,11 @@ exports.edit = (req, res) => {
      return res.render('instructors/edit', {teacher})
 }
 
-//update
-
 exports.update = (req, res) => {
     const {id} = req.body
     let index = 0
 
-    const foundInstructor = teachers.instructors.find(function(instructor, foundIndex){
+    const foundInstructor = data.instructors.find(function(instructor, foundIndex){
         if (id == instructor.id) {
             index = foundIndex
             return true
@@ -106,32 +104,31 @@ exports.update = (req, res) => {
     const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth) //passando para timestamp
+        birth: Date.parse(req.body.birth), //passando para timestamp
+        id: Number(req.body.id)
     }
 
-    teachers.instructors[index] = instructor
+    data.instructors[index] = instructor
 
-    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err) {
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-    return res.redirect(`/instructors/${id}`)
+    return res.redirect(`/instructors/`)
     })
 }
-
-//delte
 
 exports.delete = (req, res) => {
     const {id} = req.body
 
-    const filterinstructors = teachers.instructors.filter(function(instructor){
+    const filterinstructors = data.instructors.filter(function(instructor){
         return instructor.id != id
     })
 
-    teachers.instructors = filterinstructors
+    data.instructors = filterinstructors
 
-    fs.writeFile("teachers.json", JSON.stringify(teachers, null, 2), function(err){
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Erro na execução do processo")
 
-        return res.redirect("/instructors/teachers")
+        return res.redirect("/instructors/index")
     })
 }
