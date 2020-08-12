@@ -3,9 +3,9 @@
     {
       "id": 1,
       "avatar_url": "https://instagram.frec6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/116910089_734390190437980_7057351447220747857_n.jpg?_nc_ht=instagram.frec6-1.fna.fbcdn.net&_nc_ohc=YDGbiHbbpJEAX8s3d7f&oh=67745c04ebc619f56554513f2b9234ac&oe=5F5D76C0",
-      "name": "Beatriz Marcelino",
+      "name": "Beatriz  Marcelino",
       "birth": 887328000000,
-      "ano_escolar": "3",
+      "ano_escolar": "1",
       "email": "beatrizmarcelino@bmadvocacia.com.br",
       "carga_horaria": "10",
       "create_at": 1597244818153
@@ -25,11 +25,11 @@
     {
       "id": 1,
       "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "Ana Beatriz",
+      "name": "Ana Beatriz MArcelino",
       "birth": 799804800000,
       "grau_de_escolaridade": "m",
-      "tipo_de_aula": "P",
-      "area_de_atuacao": "Dança",
+      "tipo_de_aula": "D",
+      "area_de_atuacao": "Crosfit",
       "create_at": 1596569911901
     },
     {
@@ -75,22 +75,12 @@
     {
       "id": 6,
       "avatar_url": "https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=311&q=80",
-      "name": "Lucas",
-      "birth": 864259200000,
-      "grau_de_escolaridade": "esc",
-      "tipo_de_aula": "P",
-      "area_de_atuacao": "Musculação, Crosfit",
-      "create_at": 1596748119308
-    },
-    {
-      "id": 7,
-      "avatar_url": "https://images.unsplash.com/photo-1499763874088-6f30adc715b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=378&q=80",
-      "name": "Renan",
-      "birth": 746496000000,
+      "name": "Lucas Dias",
+      "birth": 895795200000,
       "grau_de_escolaridade": "esc",
       "tipo_de_aula": "D",
-      "area_de_atuacao": "Crosfit",
-      "create_at": 1596981840457
+      "area_de_atuacao": "Musculação, Crosfit",
+      "create_at": 1596748119308
     }
   ]
 }

@@ -113,7 +113,7 @@ exports.update = (req, res) => {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-    return res.redirect(`/instructors/`)
+    return res.redirect(`/instructors/${id}`)
     })
 }
 
