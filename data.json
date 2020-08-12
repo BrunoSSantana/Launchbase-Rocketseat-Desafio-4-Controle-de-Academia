@@ -1,5 +1,26 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://instagram.frec6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/116910089_734390190437980_7057351447220747857_n.jpg?_nc_ht=instagram.frec6-1.fna.fbcdn.net&_nc_ohc=YDGbiHbbpJEAX8s3d7f&oh=67745c04ebc619f56554513f2b9234ac&oe=5F5D76C0",
+      "name": "Beatriz Marcelino",
+      "birth": 887328000000,
+      "ano_escolar": "3",
+      "email": "beatrizmarcelino@bmadvocacia.com.br",
+      "carga_horaria": "10",
+      "create_at": 1597244818153
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://instagram.frec6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/73393264_401715843842129_1814856912169074688_n.jpg?_nc_ht=instagram.frec6-1.fna.fbcdn.net&_nc_ohc=GzG1Y8hfX2QAX_LoAS_&oh=14ecbc41c16397529015e6cb60bc56bc&oe=5F5DE007",
+      "name": "Adriana",
+      "birth": 231984000000,
+      "ano_escolar": "9",
+      "email": "adriana@gmail.com",
+      "carga_horaria": "10",
+      "create_at": 1597245127858
+    }
+  ],
   "instructors": [
     {
       "id": 1,
@@ -70,15 +91,6 @@
       "tipo_de_aula": "D",
       "area_de_atuacao": "Crosfit",
       "create_at": 1596981840457
-    },
-    {
-      "id": 8,
-      "avatar_url": "https://images.unsplash.com/photo-1491484925566-336b202157a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-      "name": "Gustavo",
-      "birth": 601171200000,
-      "grau_de_escolaridade": "esi",
-      "area_de_atuacao": "Dança",
-      "create_at": 1596982151835
     }
   ]
 }

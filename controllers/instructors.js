@@ -78,12 +78,12 @@ exports.edit = (req, res) => {
         return res.send('Instrutor não encontrado')
     }
 
-    const teacher = {
+    const instructor = {
         ...foundInstructor,
         birth: dateUtc(foundInstructor.birth)
     }
 
-     return res.render('instructors/edit', {teacher})
+     return res.render('instructors/edit', {instructor})
 }
 
 exports.update = (req, res) => {

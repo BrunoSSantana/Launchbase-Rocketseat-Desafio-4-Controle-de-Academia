@@ -42,5 +42,25 @@ module.exports = {
         const ano = data.getUTCFullYear()
 
         return `${ano}-${mes}-${dia}`
+    },
+    education: (education) => {
+        switch(education) {
+            case '5':
+                return '5º do Ensino Fundamental'
+            case '6':
+                return '6º do Ensino Fundamental'
+            case '7':
+                return '7º do Ensino Fundamental'
+            case '8':
+                return '8º do Ensino Fundamental'
+            case '9':
+                return '9º do Ensino Fundamental'
+            case '1':
+                return '1º do Ensino Médio'
+            case '2':
+                return '2º do Ensino Médio'
+            case '3':
+                return '3º do Ensino Médio'
+        }
     }
 }

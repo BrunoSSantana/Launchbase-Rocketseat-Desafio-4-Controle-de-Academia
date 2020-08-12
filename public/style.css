@@ -159,30 +159,18 @@ input[type="radio"] {
     margin-right: 4px;
 }
 
-input[type="text"] {
+select, option,
+input[type="date"],
+input[type="url"],
+input[type="text"],
+input[type="number"],
+input[type="email"] {
     background-color: var(--gray);
     border: none;
     color: var(--white);
 }
 
-input[type="url"] {
-    background-color: var(--gray);
-    border: none;
-    color: var(--white);
-}
 
-input[type="date"] {
-    background-color: var(--gray);
-    border: none;
-    color: var(--white);
-}
-
-select, option {
-    background-color: var(--gray);
-    border: none;
-    color: var(--white);
-
-}
 
 input::placeholder {
     color: var(--white);

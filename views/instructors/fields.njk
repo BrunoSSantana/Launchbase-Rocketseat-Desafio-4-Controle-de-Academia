@@ -5,7 +5,7 @@
             type="url" 
             name="avatar_url" 
             placeholder="http://"
-            value="{{student.avatar_url}}"
+            value="{{instructor.avatar_url}}"
             >
         </div>
     </div>
@@ -17,7 +17,7 @@
             type="text" 
             name="name"
             placeholder="Seu Nome"
-            value="{{student.name}}"
+            value="{{instructor.name}}"
             >
         </div>
     </div>
@@ -28,36 +28,36 @@
             <input 
             type="date"
             name="birth"
-            value="{{student.birth}}"
+            value="{{instructor.birth}}"
             >
         </div>
     </div>
 
     <div class="item">
-        <div>Ano Escolar</div>
+        <div>Grau de Escolaridade</div>
         <div>
-            <select name="ano_escolar" >
+            <select name="grau_de_escolaridade" >
                 <option 
                     value="esi"
-                    {% if student.grau_de_escolaridade == "esi" %}
+                    {% if instructor.grau_de_escolaridade == "esi" %}
                     selected
                     {% endif %}
                 >Ensino Superior Incompleto</option>
                 <option 
                     value="esc"
-                    {% if student.grau_de_escolaridade == "esc" %}
+                    {% if instructor.grau_de_escolaridade == "esc" %}
                     selected
                     {% endif %}
                     >Ensino Superior Completo</option>
                 <option
                     value="m"
-                    {% if student.grau_de_escolaridade == "m" %}
+                    {% if instructor.grau_de_escolaridade == "m" %}
                     selected
                     {% endif %}
                     >Mestrado</option>
                 <option 
                     value="d"
-                    {% if student.grau_de_escolaridade == "d" %}
+                    {% if instructor.grau_de_escolaridade == "d" %}
                     selected
                     {% endif %}
                     >Doutorado</option>
@@ -72,7 +72,7 @@
             type="radio" 
             name="tipo_de_aula" 
             value="P"
-            {% if student.tipo_de_aula == "P" %}
+            {% if instructor.tipo_de_aula == "P" %}
             checked
             {% endif %}
             >Presencial</span>
@@ -80,7 +80,7 @@
             type="radio" 
             name="tipo_de_aula" 
             value="D"
-            {% if student.tipo_de_aula == "D" %}
+            {% if instructor.tipo_de_aula == "D" %}
             checked
             {% endif %}
             >Distância</span>
@@ -93,7 +93,7 @@
             <input type="text"
             name="area_de_atuacao"
             placeholder="Ex.: Musculação, Crosfit"
-            value="{{student.area_de_atuacao}}"
+            value="{{instructor.area_de_atuacao}}"
             >
 
         </div>

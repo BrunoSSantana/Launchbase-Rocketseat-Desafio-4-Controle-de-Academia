@@ -1,8 +1,7 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, dateUtc, graduation, dateTeacher } = require('../utils')
+const { age, dateUtc, dateTeacher, education } = require('../utils')
 
-//create
 exports.index = function(req, res) {
     return res.render('students/index', {students: data.students})
 }
@@ -12,44 +11,40 @@ exports.create = function(req, res) {
 }
 
 exports.post = function(req, res) {
-    //req.body
     const keys = Object.keys(req.body)
     
     for (key of keys) {
         if (req.body[key] == "") {
-            return res.send(`Preencha todos os campos`)
+            return res.send(`Preencha todos os students`)
         }
     }
 
-    let {avatar_url, name, birth, grau_de_escolaridade, tipo_de_aula, area_de_atuacao} = req.body
+    let {avatar_url, name, birth, email, ano_escolar, carga_horaria } = req.body
 
     birth = Date.parse(birth)
     const create_at = Date.now()
     const id = Number(data.students.length + 1)
-   
     
     data.students.push({
         id,
         avatar_url,
         name,
         birth,
-        grau_de_escolaridade,
-        tipo_de_aula,
-        area_de_atuacao,
+        ano_escolar,
+        email,
+        carga_horaria,
         create_at,
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/students/index")
+        return res.redirect("/students/")
     })
 
 }
 
-//show
-
-exports.show = (req, res) => {
+exports.show = function(req, res) {
     const {id} = req.params
     
     const foundStudent = data.students.find(function(student){
@@ -57,24 +52,20 @@ exports.show = (req, res) => {
     })
     
     if (!foundStudent) {
-        return res.send('Instrutor não encontrado')
+        return res.send('Student não encontrado')
     }
 
-
-    const teacher = {
+    const student = {
         ...foundStudent,
-        grau_de_escolaridade: graduation(foundStudent.grau_de_escolaridade),
+        ano_escolar: education(foundStudent.ano_escolar),
         age: age(foundStudent.birth),
-        area_de_atuacao: foundStudent.area_de_atuacao.split(','),
         create_at: dateTeacher(foundStudent.create_at)
     }
 
-    return res.render('students/show', {teacher})
+    return res.render('students/show', {student})
 }
 
-//edit
-
-exports.edit = (req, res) => {
+exports.edit = function(req, res) {
     const {id} = req.params
 
     const foundStudent = data.students.find(function(student){
@@ -82,20 +73,18 @@ exports.edit = (req, res) => {
     })
     
     if (!foundStudent) {
-        return res.send('Instrutor não encontrado')
+        return res.send('Student não encontrado')
     }
 
-    const teacher = {
+    const student = {
         ...foundStudent,
         birth: dateUtc(foundStudent.birth)
     }
 
-     return res.render('students/edit', {teacher})
+     return res.render('students/edit', {student})
 }
 
-//update
-
-exports.update = (req, res) => {
+exports.update = function(req, res) {
     const {id} = req.body
     let index = 0
 
@@ -107,7 +96,7 @@ exports.update = (req, res) => {
     })
     
     if (!foundStudent) {
-        return res.send('Instrutor não encontrado')
+        return res.send('Student não encontrado')
     }
 
     const student = {
@@ -125,9 +114,7 @@ exports.update = (req, res) => {
     })
 }
 
-//delte
-
-exports.delete = (req, res) => {
+exports.delete = function(req, res) {
     const {id} = req.body
 
     const filterStudents = data.students.filter(function(student){
