@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const instructors = require('./controllers/instructors')
-const members = require('./controllers/members')
+const students = require('./controllers/students')
 
 routes.get('/', function(req, res) {
     return res.redirect('/instructors')
@@ -17,12 +17,12 @@ routes.post("/instructors", instructors.post )
 
 /*  */
 
-routes.get('/members', members.index)
-routes.get("/members/create", members.create)
-routes.get("/members/:id", members.show)
-routes.get("/members/:id/edit", members.edit)
-routes.put("/members", members.update)
-routes.delete("/members", members.delete)
-routes.post("/members", members.post )
+routes.get('/students', students.index)
+routes.get("/students/create", students.create)
+routes.get("/students/:id", students.show)
+routes.get("/students/:id/edit", students.edit)
+routes.put("/students", students.update)
+routes.delete("/students", students.delete)
+routes.post("/students", students.post )
 
 module.exports = routes
