@@ -102,6 +102,7 @@ exports.update = function(req, res) {
     const student = {
         ...foundStudent,
         ...req.body,
+        id: Number(req.body.id),
         birth: Date.parse(req.body.birth) //passando para timestamp
     }
 
