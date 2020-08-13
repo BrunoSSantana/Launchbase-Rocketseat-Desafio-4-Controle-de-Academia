@@ -24,6 +24,9 @@ O **Gym Manger** é um gerenciador de instrutores de academias criado durante o 
 ## :package: Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguinte tecnologias:
+ - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
+ - [CSS3](https://www.w3schools.com/css/)
+ - [Javascript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript)
  - [Node.js](https://nodejs.org/)
  - [Express](https://expressjs.com/)
  - [Nunjucks](https://mozilla.github.io/nunjucks/)
