@@ -81,6 +81,16 @@
       "tipo_de_aula": "D",
       "area_de_atuacao": "Dança",
       "create_at": 1596644210322
+    },
+    {
+      "id": 6,
+      "avatar_url": "https://images.unsplash.com/photo-1553607174-a0cd1b41fc56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Bruna",
+      "birth": 540172800000,
+      "grau_de_escolaridade": "esc",
+      "tipo_de_aula": "P",
+      "area_de_atuacao": "Dança",
+      "create_at": 1597353563627
     }
   ]
 }
