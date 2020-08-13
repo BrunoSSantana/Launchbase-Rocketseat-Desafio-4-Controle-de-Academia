@@ -39,7 +39,7 @@ exports.post = function(req, res) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/instructors/index")
+        return res.redirect(`/instructors/${id}`)
     })
 
 }
@@ -80,7 +80,7 @@ exports.edit = (req, res) => {
 
     const instructor = {
         ...foundInstructor,
-        birth: dateUtc(foundInstructor.birth)
+        birth: dateUtc(foundInstructor.birth).iso
     }
 
      return res.render('instructors/edit', {instructor})

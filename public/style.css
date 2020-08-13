@@ -265,10 +265,8 @@ tbody tr td:first-child span{
     border-radius: 50%;
 }
 
-.table-container > a {
-    display: inline-block;
-    margin: 0;
-    text-align: center;
+.table-container a {
+    display: block;
     width: 60px;
     text-decoration: none;
 }

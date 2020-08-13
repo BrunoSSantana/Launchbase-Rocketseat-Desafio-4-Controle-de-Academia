@@ -2,30 +2,33 @@
 
 {% block content %}
     
-    <div class="card">
+<div class="card">
 
-        <section
-            class="avatar"
-            style="background: url({{student.avatar_url}}) no-repeat center center / cover" >
-        </section>
+    <section
+        class="avatar"
+        style="background: url({{student.avatar_url}}) no-repeat center center / cover" >
+    </section>
 
-        <section class="details">
-            <form method="POST" action="/students?_method=PUT">
-            
-                <h3>Editar Instrutor</h3>
-                {% include 'students/fields.njk' %}  
-                <input type="hidden" name="id" value="{{student.id}}">
+    <section class="details">
+        <form method="POST" action="/students?_method=PUT">
+        
+            <h3>Editar Instrutor</h3>
+            {% include 'students/fields.njk' %}  
+            <input type="hidden" name="id" value="{{student.id}}">
 
-            </form>
+        </form>
 
-            <form class="form-delete" action="/students?_method=DELETE" method="post">
+        <form class="form-delete" action="/students?_method=DELETE" method="post">
 
-                <input type="hidden" name="id" value={{student.id}}>
-                <button type="submit">Deletar</button>
-            
-            </form>
+            <input type="hidden" name="id" value={{student.id}}>
+            <button type="submit">Deletar</button>
+        
+        </form>
 
-        </section>
+    </section>
 
-    </div>
+</div>
+
+{% include 'confirm.njk' %}
+
 {% endblock content %}

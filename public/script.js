@@ -52,3 +52,4 @@ for (let card of cards) {
         console.log("opa")
     })
 }
+//= DELTE =\\

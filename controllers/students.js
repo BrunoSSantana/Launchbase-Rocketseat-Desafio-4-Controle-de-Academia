@@ -19,21 +19,20 @@ exports.post = function(req, res) {
         }
     }
 
-    let {avatar_url, name, birth, email, ano_escolar, carga_horaria } = req.body
-
-    birth = Date.parse(birth)
+    birth = Date.parse(req.body.birth)
     const create_at = Date.now()
-    const id = Number(data.students.length + 1)
+    
+    let id = 1
+    const lastId = data.students[data.students.length - 1]
+    if(lastId.id > 0) {
+        id = Number(lastId.id + 1)
+    }
     
     data.students.push({
         id,
-        avatar_url,
-        name,
         birth,
-        ano_escolar,
-        email,
-        carga_horaria,
         create_at,
+        ...req.body
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
@@ -59,7 +58,8 @@ exports.show = function(req, res) {
         ...foundStudent,
         ano_escolar: education(foundStudent.ano_escolar),
         age: age(foundStudent.birth),
-        create_at: dateTeacher(foundStudent.create_at)
+        create_at: dateTeacher(foundStudent.create_at),
+        birthday: dateUtc(foundStudent.birth).birthday
     }
 
     return res.render('students/show', {student})
@@ -78,7 +78,7 @@ exports.edit = function(req, res) {
 
     const student = {
         ...foundStudent,
-        birth: dateUtc(foundStudent.birth)
+        birth: dateUtc(foundStudent.birth).iso
     }
 
      return res.render('students/edit', {student})
@@ -127,6 +127,6 @@ exports.delete = function(req, res) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Erro na execução do processo")
 
-        return res.redirect("/students/index")
+        return res.redirect("/students")
     })
 }

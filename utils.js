@@ -3,7 +3,7 @@ module.exports = {
         const today = new Date()
         const birthDate = new Date(timestamp)
 
-        const age = today.getFullYear() - birthDate.getFullYear()
+        let age = today.getFullYear() - birthDate.getFullYear()
         const month = today.getMonth() - birthDate.getMonth()
 
         if (month < 0 || month == 0 && (today.getDate - birthDate.getDate) <= 0 ) {
@@ -41,7 +41,13 @@ module.exports = {
         const mes = (data.getUTCMonth()+1).toString().padStart(2, "0")
         const ano = data.getUTCFullYear()
 
-        return `${ano}-${mes}-${dia}`
+        return {
+            dia,
+            mes,
+            ano,
+            iso: `${ano}-${mes}-${dia}`,
+            birthday: `${dia}/${mes}`
+        }
     },
     education: (education) => {
         switch(education) {
