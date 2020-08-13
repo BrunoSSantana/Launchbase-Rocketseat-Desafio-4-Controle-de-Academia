@@ -63,7 +63,7 @@ header {
 .card {
     position: relative;
     background-color: var(--white);
-    max-width: 80%;
+    max-width: 70%;
     min-height: 400px;
 
     margin: 20px auto;
@@ -175,7 +175,7 @@ input[type="email"] {
 input::placeholder {
     color: var(--white);
 }
-
+.table-container > a,
 button[type="submit"],
 a.button {
     margin-top: 8px;
@@ -186,7 +186,7 @@ a.button {
     border-bottom: none;
     background-color: var(--gray);
     color: var(--white);
-        cursor: pointer;
+    cursor: pointer;
     width: 100%;
 }
 
@@ -210,7 +210,7 @@ a.button {
 .table-container {
     display: block;
     font-size: 12px;
-    padding: 40px;
+    padding: 20px 40px;
 }
 table {
     border-collapse: unset;
@@ -263,4 +263,12 @@ tbody tr td:first-child span{
     background-position: center;
     background-size: cover;
     border-radius: 50%;
+}
+
+.table-container > a {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    width: 60px;
+    text-decoration: none;
 }
