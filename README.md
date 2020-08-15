@@ -3,16 +3,15 @@
 [![](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/bruno-santanas/)
 <h1 align="center"><img src="./public/assets/GymManager.png" height="180"/></h1>
 
-# Índice
+## Índice
 
 * [Sobre](#-sobre)
 * [Tecologias Utilizadas](#-tecnologias-utilizadas)
 * [Como Instalar o Projeto](#-como-instalar-o-projeto)
 * [Contato](#-contato)
 * [Licença](#-licensa)
-    
-    
 
+---
 
 ## :bookmark: Sobre
 
@@ -48,6 +47,7 @@ O projeto foi desenvolvido utilizando as seguinte tecnologias:
     npm start
     
  ```
+ ---
  
  ## :speech_balloon: Contato
  Bruno Santana - [@BrunoSSantanas](https://twitter.com/BrunoSSantanas) - [brunoosouzas@hotmail.com](mailto:m.bluth@example.com)
@@ -55,7 +55,7 @@ O projeto foi desenvolvido utilizando as seguinte tecnologias:
  ## :page_facing_up: Linceça
  Distribuído sob a licença MIT. Consulte [LICENSE](https://opensource.org/licenses/MIT) para obter mais informações.
  
- ## Reconcimentos
+ ## :green_heart: Reconhecimentos
  
 - [Como criar um RADME | by Daniele Leao Evangelista](https://www.youtube.com/watch?v=Gcb60rPbnKA&t=554s)
 - [O que todo projeto deveria ter? #01 | by Mario Solto (Dev Soltinho)](https://www.youtube.com/watch?v=yMRSDdifGW8&t=1107s)
