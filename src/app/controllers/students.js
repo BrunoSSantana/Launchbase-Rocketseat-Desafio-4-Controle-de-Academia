@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, dateUtc, dateTeacher, education } = require('../../utils')
+const { age, dateUtc, dateTeacher, education } = require('../../lib/utils')
 
 exports.index = function(req, res) {
     return res.render('students/index', {students: data.students})
