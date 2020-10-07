@@ -1,5 +1,5 @@
 module.exports = {
-    age: function (timestamp) {
+    age(timestamp) {
         const today = new Date()
         const birthDate = new Date(timestamp)
 
@@ -12,7 +12,7 @@ module.exports = {
 
         return age
     },
-    graduation: function(graduation) {
+    graduation(graduation) {
         switch(graduation) {
             case 'esi':
                 return 'Ensino Superior Incompconsto'
@@ -25,7 +25,7 @@ module.exports = {
         }
     },
     
-    dateTeacher: function(timestamp) {
+    dateTeacher(timestamp) {
         data = new Date(timestamp)
 
         const dia = data.getDate().toString().padStart(2, "0")
@@ -34,7 +34,7 @@ module.exports = {
         
         return `${dia}/${mes}/${ano}`
     },
-    dateUtc: function(timestamp) {
+    dateUtc(timestamp) {
         data = new Date(timestamp)
 
         const dia = data.getUTCDate().toString().padStart(2, "0")
@@ -49,7 +49,7 @@ module.exports = {
             birthday: `${dia}/${mes}`
         }
     },
-    education: (education) => {
+    education(education) {
         switch(education) {
             case '5':
                 return '5º do Ensino Fundamental'
